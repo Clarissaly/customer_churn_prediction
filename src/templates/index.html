@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Churn Prediction</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Predict Customer Churn</h1>
+      <form method="POST">
+        <label for="num_referrals">No. of Referrals:</label><br />
+        <input
+          type="text"
+          id="num_referrals"
+          name="num_referrals"
+          value="0"
+        /><br /><br />
+
+        <label for="contract_type">Contract Type:</label><br />
+        <select name="contract_type" id="contract_type">
+          <option value=""></option>
+          <option value="Month-to-Month">Monthly</option>
+          <option value="One Year" selected>1-Year</option>
+          <option value="Two Year">2-Year</option></select
+        ><br /><br />
+
+        <label for="num_dependents">No. of Dependents:</label><br />
+        <input
+          type="text"
+          id="num_dependents"
+          name="num_dependents"
+          value="0"
+        /><br /><br />
+
+        <label for="tenure_months">Length of Tenure (in months):</label><br />
+        <input
+          type="text"
+          id="tenure_months"
+          name="tenure_months"
+          value="10"
+        /><br /><br />
+
+        <label for="total_monthly_fee">Total Monthly Fee (in $):</label><br />
+        <input
+          type="text"
+          id="total_monthly_fee"
+          name="total_monthly_fee"
+          value="100.11"
+        /><br /><br />
+
+        <label for="age">Age:</label><br />
+        <input type="text" id="age" name="age" value="26" /><br /><br />
+
+        <label for="zip_code">Zip Code:</label><br />
+        <input
+          type="text"
+          id="zip_code"
+          name="zip_code"
+          value="90211"
+        /><br /><br />
+
+        <label for="paperless_billing">Paperless Billing:</label><br />
+        <select name="paperless_billing" id="paperless_billing">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option></select
+        ><br /><br />
+
+        <label for="avg_long_distance_fee_monthly"
+          >Avg. Long Distance Fee Monthly:</label
+        ><br />
+        <input
+          type="text"
+          id="avg_long_distance_fee_monthly"
+          name="avg_long_distance_fee_monthly"
+          value="273.11"
+        /><br /><br />
+
+        <label for="total_charges_quarter">Total Charges (per Quarter):</label
+        ><br />
+        <input
+          type="text"
+          id="total_charges_quarter"
+          name="total_charges_quarter"
+          value="578.23"
+        /><br /><br />
+
+        <input type="submit" value="Predict" />
+      </form>
+
+      {% if prediction is defined %}
+      <h2>Model Prediction: {{ prediction }}</h2>
+      {% endif %}
+    </div>
+  </body>
+</html>
