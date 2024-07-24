@@ -10,4 +10,4 @@ The chosen final model is CatBoost with the following parameters:
 The CatBoost model has a final AUC score of 0.911, taking into account only the top 10 features, training the model on the full dataset using cross-validation.
 
 To see the final product:
-Website URL of deployed Flask web application: http://ec2-3-27-115-174.ap-southeast-2.compute.amazonaws.com 
+Website URL of deployed web application: http://ec2-3-27-115-174.ap-southeast-2.compute.amazonaws.com 
